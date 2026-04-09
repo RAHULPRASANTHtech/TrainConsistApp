@@ -73,6 +73,45 @@ public class TrainConsistApp {
         System.out.println("\nUC3 uniqueness validation completed...");
 
 // ================= UC3 END =================
+        // ================= UC4 START =================
+
+        System.out.println("\n====================================");
+        System.out.println("   UC4 - Maintain Ordered Bogie Consist");
+        System.out.println("====================================\n");
+
+// Create LinkedList
+        LinkedList<String> consist = new LinkedList<>();
+
+// Add bogies
+        consist.add("Engine");
+        consist.add("Sleeper");
+        consist.add("AC");
+        consist.add("Cargo");
+        consist.add("Guard");
+
+// Initial state
+        System.out.println("Initial Train Consist:");
+        System.out.println(consist);
+
+// Insert Pantry Car at position 2
+        consist.add(2, "Pantry Car");
+
+        System.out.println("\nAfter Inserting \"Pantry Car\" at position 2:");
+        System.out.println(consist);
+
+// Remove first and last
+        consist.removeFirst();
+        consist.removeLast();
+
+        System.out.println("\nAfter Removing First and Last Bogie:");
+        System.out.println(consist);
+
+// Completion message
+        System.out.println("\nUC4 ordered consist operations completed...");
+
+// ================= UC4 END =================
+
         System.out.println("\nSystem ready for operations...");
+
     }
 }

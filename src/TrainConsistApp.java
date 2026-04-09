@@ -140,6 +140,33 @@ public class TrainConsistApp {
         System.out.println("\nUC5 formation setup completed...");
 
 // ================= UC5 END =================
+        // ================= UC6 START =================
+
+        System.out.println("\n====================================");
+        System.out.println(" UC6 - Map Bogie to Capacity (HashMap)");
+        System.out.println("====================================\n");
+
+// Create HashMap
+        HashMap<String, Integer> bogieCapacity = new HashMap<>();
+
+// Insert values
+        bogieCapacity.put("First Class", 24);
+        bogieCapacity.put("Cargo", 120);
+        bogieCapacity.put("Sleeper", 72);
+        bogieCapacity.put("AC Chair", 56);
+
+// Display
+        System.out.println("Bogie Capacity Details:");
+
+// Iterate using entrySet()
+        for (Map.Entry<String, Integer> entry : bogieCapacity.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+// Completion message
+        System.out.println("\nUC6 bogie-capacity mapping completed...");
+
+// ================= UC6 END =================
 
         System.out.println("\nSystem ready for operations...");
 

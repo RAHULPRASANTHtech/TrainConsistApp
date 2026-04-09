@@ -44,7 +44,35 @@ public class TrainConsistApp {
         System.out.println("\nFinal Train Consist : " + trainConsist);
 
         // ================= UC2 END =================
+// ================= UC3 START =================
 
+        System.out.println("\n====================================");
+        System.out.println("        UC3 - Track Unique Bogie IDs");
+        System.out.println("====================================\n");
+
+// Create HashSet
+        Set<String> bogieIds = new HashSet<>();
+
+// Add bogie IDs (including duplicates)
+        bogieIds.add("B104");
+        bogieIds.add("B103");
+        bogieIds.add("B102");
+        bogieIds.add("B101");
+        bogieIds.add("B104"); // duplicate
+        bogieIds.add("B103"); // duplicate
+
+// Display result
+        System.out.println("Bogie IDs After Insertion:");
+        System.out.println(bogieIds);
+
+// Note
+        System.out.println("\nNote:");
+        System.out.println("Duplicates are automatically ignored by HashSet.");
+
+// Completion message
+        System.out.println("\nUC3 uniqueness validation completed...");
+
+// ================= UC3 END =================
         System.out.println("\nSystem ready for operations...");
     }
 }

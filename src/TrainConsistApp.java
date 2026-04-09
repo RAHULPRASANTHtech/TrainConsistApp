@@ -1,5 +1,13 @@
 import java.util.*;
+class Bogie {
+    String name;
+    int capacity;
 
+    Bogie(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+    }
+}
 public class TrainConsistApp {
 
     public static void main(String[] args) {
@@ -167,6 +175,39 @@ public class TrainConsistApp {
         System.out.println("\nUC6 bogie-capacity mapping completed...");
 
 // ================= UC6 END =================
+        // ================= UC7 START =================
+
+        System.out.println("\n====================================");
+        System.out.println(" UC7 - Sort Bogies by Capacity (Comparator)");
+        System.out.println("====================================\n");
+
+// Create list of Bogie objects
+        List<Bogie> bogies = new ArrayList<>();
+
+        bogies.add(new Bogie("Sleeper", 72));
+        bogies.add(new Bogie("AC Chair", 56));
+        bogies.add(new Bogie("First Class", 24));
+        bogies.add(new Bogie("General", 90));
+
+// Before sorting
+        System.out.println("Before Sorting:");
+        for (Bogie b : bogies) {
+            System.out.println(b.name + " -> " + b.capacity);
+        }
+
+// Sort using Comparator (ascending)
+        bogies.sort(Comparator.comparingInt(b -> b.capacity));
+
+// After sorting
+        System.out.println("\nAfter Sorting by Capacity:");
+        for (Bogie b : bogies) {
+            System.out.println(b.name + " -> " + b.capacity);
+        }
+
+// Completion message
+        System.out.println("\nUC7 sorting completed...");
+
+// ================= UC7 END =================
 
         System.out.println("\nSystem ready for operations...");
 

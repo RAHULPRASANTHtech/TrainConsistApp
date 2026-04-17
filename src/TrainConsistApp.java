@@ -265,3 +265,22 @@ for (Map.Entry<String, List<Bogie>> entry : grouped.entrySet()) {
 System.out.println("UC9 grouping completed...");
 
 // ================= UC9 END =================
+// ================= UC10 START =================
+
+System.out.println("\n====================================");
+System.out.println(" UC10 - Total Capacity using Stream Reduction");
+System.out.println("====================================\n");
+
+// Reuse bogies list
+
+// Calculate total capacity
+int totalCapacity = bogies.stream()
+        .map(b -> b.capacity)
+        .reduce(0, Integer::sum);
+
+// Display result
+System.out.println("Total Seating Capacity: " + totalCapacity);
+
+System.out.println("\nUC10 aggregation completed...");
+
+// ================= UC10 END =================

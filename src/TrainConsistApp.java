@@ -213,3 +213,26 @@ public class TrainConsistApp {
 
     }
 }
+// ================= UC8 START =================
+
+System.out.println("\n====================================");
+System.out.println(" UC8 - Filter Passenger Bogies Using Streams");
+System.out.println("====================================\n");
+
+System.out.println("All Bogies:");
+for (Bogie b : bogies) {
+    System.out.println(b.name + " -> " + b.capacity);
+}
+
+List<Bogie> filtered = bogies.stream()
+        .filter(b -> b.capacity > 60)
+        .toList();
+
+System.out.println("\nFiltered Bogies (Capacity > 60):");
+for (Bogie b : filtered) {
+    System.out.println(b.name + " -> " + b.capacity);
+}
+
+System.out.println("\nUC8 filtering completed...");
+
+// ================= UC8 END =================

@@ -236,3 +236,32 @@ for (Bogie b : filtered) {
 System.out.println("\nUC8 filtering completed...");
 
 // ================= UC8 END =================
+
+// ================= UC9 START =================
+
+System.out.println("\n====================================");
+System.out.println(" UC9 - Group Bogies using Streams");
+System.out.println("====================================\n");
+
+// Reuse bogies list from UC7
+
+// Group by category (example: based on capacity type)
+Map<String, List<Bogie>> grouped = bogies.stream()
+        .collect(Collectors.groupingBy(b -> {
+            if (b.capacity >= 70) return "High Capacity";
+            else if (b.capacity >= 50) return "Medium Capacity";
+            else return "Low Capacity";
+        }));
+
+// Display grouped result
+for (Map.Entry<String, List<Bogie>> entry : grouped.entrySet()) {
+    System.out.println(entry.getKey() + ":");
+    for (Bogie b : entry.getValue()) {
+        System.out.println("  " + b.name + " -> " + b.capacity);
+    }
+    System.out.println();
+}
+
+System.out.println("UC9 grouping completed...");
+
+// ================= UC9 END =================

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.*;
 class Bogie {
     String name;
     int capacity;
@@ -284,3 +285,36 @@ System.out.println("Total Seating Capacity: " + totalCapacity);
 System.out.println("\nUC10 aggregation completed...");
 
 // ================= UC10 END =================
+// ================= UC11 START =================
+
+System.out.println("\n====================================");
+System.out.println(" UC11 - Validate Train ID & Cargo Code (Regex)");
+System.out.println("====================================\n");
+
+// Sample inputs (you can later take from user)
+String trainId = "TRN-1234";
+String cargoCode = "PET-AB";
+
+// Regex patterns
+String trainPattern = "TRN-\\d{4}";
+String cargoPattern = "PET-[A-Z]{2}";
+
+// Compile patterns
+Pattern trainRegex = Pattern.compile(trainPattern);
+Pattern cargoRegex = Pattern.compile(cargoPattern);
+
+// Match inputs
+Matcher trainMatcher = trainRegex.matcher(trainId);
+Matcher cargoMatcher = cargoRegex.matcher(cargoCode);
+
+// Validate
+boolean isTrainValid = trainMatcher.matches();
+boolean isCargoValid = cargoMatcher.matches();
+
+// Output
+System.out.println("Train ID (" + trainId + ") Valid? : " + isTrainValid);
+System.out.println("Cargo Code (" + cargoCode + ") Valid? : " + isCargoValid);
+
+System.out.println("\nUC11 validation completed...");
+
+// ================= UC11 END =================
